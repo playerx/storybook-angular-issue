@@ -1,27 +1,22 @@
-# CoolSt
+# Storybook Angular Issue
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Steps to reproduce:
+1. `npm i`
+2. `npm run storybook`
+3. open page console and you will see the error:
+```
+Uncaught TypeError: __webpack_require__.nmd is not a function
+    at ./node_modules/webpack-hot-middleware/client.js?reload=true&quiet=false&overlay={"errors":true,"warnings":false,"runtimeErrors":false}&noInfo=false (VM481 vendors-node_modules_storybook_angular_dist_client_config_js-node_modules_webpack-hot-middlew-e8465c.iframe.bundle.js:115226:53)
+    at __webpack_require__ (VM485 runtime~styles.scss.iframe.bundle.js:28:33)
+    at __webpack_exec__ (VM484 main.iframe.bundle.js:284:48)
+    at VM484 main.iframe.bundle.js:285:148
+    at __webpack_require__.O (VM485 runtime~styles.scss.iframe.bundle.js:72:23)
+    at VM484 main.iframe.bundle.js:286:56
+    at webpackJsonpCallback (VM485 runtime~styles.scss.iframe.bundle.js:1188:39)
+    at Array.forEach (<anonymous>)
+    at VM485 runtime~styles.scss.iframe.bundle.js:1202:31
+    at VM485 runtime~styles.scss.iframe.bundle.js:1204:13
+```
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Also, when you try to change the component, it's not updated in storybook, you get another error and you need to manually refresh the page.
